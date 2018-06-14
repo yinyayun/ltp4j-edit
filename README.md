@@ -6,6 +6,9 @@
 	- 接口使用的封装，以及官方给定的模型集成
 	- native方法增加模型是否已经加载的判定
 	- linux、windows系统下的动态链接文件适配加载
+4. 编译环境
+	- linux:CentOS Linux release 7.3.1611
+	- windows:win7 64位+vs2013
 
 # 准备
 - vs2013安装 （windows下）
