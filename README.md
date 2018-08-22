@@ -1,5 +1,4 @@
-# 写在最前面的
-## 说明
+## 写在最前面的
 1. 教程能够成功执行，依赖于LTP官方提供了CMakeLists.txt
 2. 本项目部分代码来源于[官方LTP4j项目](https://github.com/HIT-SCIR/ltp4j)，主要是对LTP的封装，若有侵权请联系删除。
 3. 修改内容如下:
@@ -12,7 +11,7 @@
 	- linux:CentOS Linux release 7.3.1611
 	- windows:win7 64位+vs2013
 
-# 准备
+## 准备
 - vs2013安装 （windows下）
 - cmake安装
 - maven安装
@@ -34,11 +33,11 @@
 3. 执行cmake --build . （linux下执行make）
 
 
-# 构建Jar
+## 构建Jar
 使用maven进行构建即可.
 因模型文件较大，所以将基础NLP任务（词法分析）、句法分析分别进行了打包构建。
 
-# 使用
+## 使用
 ```java
 	LTPPipeLine defaultPipe = new LTPPipeLine();
 	LTPResult result = defaultPipe.parser("我的邮箱坏了，找谁处理");
