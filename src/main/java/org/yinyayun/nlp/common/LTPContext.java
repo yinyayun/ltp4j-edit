@@ -5,6 +5,7 @@ import java.util.List;
 public class LTPContext {
 	private String text;
 	private List<String> words;
+	private List<String> lemmas;
 	private List<String> tags;
 	private List<String> ners;
 
@@ -63,4 +64,11 @@ public class LTPContext {
 		return deprels;
 	}
 
+	public List<String> getLemmas() {
+		return lemmas;
+	}
+
+	public void setLemmas(List<String> lemmas) {
+		this.lemmas = lemmas;
+	}
 }

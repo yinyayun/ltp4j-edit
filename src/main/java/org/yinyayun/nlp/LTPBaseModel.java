@@ -80,7 +80,7 @@ public abstract class LTPBaseModel {
 		}
 	}
 
-	private File createTempDirectory() {
+	protected File createTempDirectory() {
 		String packageVersion = LTPNativeLibrary.class.getPackage().getImplementationVersion();
 		File baseDirectory = new File(System.getProperty("java.io.tmpdir"));
 		String directoryName = "ltp_fnlp_models-" + packageVersion;

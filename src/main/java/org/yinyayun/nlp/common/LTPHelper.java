@@ -31,6 +31,8 @@ public class LTPHelper {
 			{ "左附加关系", "LAD", "left adjunct", "大山和大海 (和 <– 大海)" }, { "右附加关系", "RAD", "right adjunct", "孩子们 (孩子 –> 们)" },
 			{ "独立结构", "IS", "independent structure", "两个单句在结构上彼此独立" }, { "核心关系", "HED", "head", "指整个句子的核心" }, };
 
+	public final static String[] UNIMPORTANCES = { "lm", "c", "e", "g", "h", "i", "k", "o", "p", "u", "wp", "x" };
+
 	private static Map<String, DesAndExample> POSMAP = new HashMap<String, DesAndExample>();
 	private static Map<String, String> NERMAP = new HashMap<String, String>();
 
@@ -52,13 +54,25 @@ public class LTPHelper {
 	}
 
 	/**
-	 * 是否为名词
+	 * 名词，包含通常理解上的，位置名词，以及方位名词
 	 * 
 	 * @param tag
 	 * @return
 	 */
 	public static boolean isNoun(String tag) {
-		if ("n".equals(tag))
+		if ("n".equals(tag) || "nd".equals(tag) || "nl".equals(tag) || "j".equals(tag))
+			return true;
+		return false;
+	}
+
+	/**
+	 * 一般名词，即通常理解上的名词
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public static boolean isGeneralNoun(String tag) {
+		if ("ws".equals(tag))
 			return true;
 		return false;
 	}
@@ -75,6 +89,14 @@ public class LTPHelper {
 		return false;
 	}
 
+	public static boolean isUnImportant(String tag) {
+		for (String t : UNIMPORTANCES) {
+			if (t.equals(tag))
+				return true;
+		}
+		return false;
+	}
+
 	/**
 	 * 是否为专有名词
 	 * 
@@ -88,6 +110,18 @@ public class LTPHelper {
 	}
 
 	/**
+	 * 是否为地名
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public static boolean isGeoName(String tag) {
+		if ("ns".equals(tag))
+			return true;
+		return false;
+	}
+
+	/**
 	 * 是否为人名
 	 * 
 	 * @param tag
@@ -95,6 +129,29 @@ public class LTPHelper {
 	 */
 	public static boolean isPersonName(String tag) {
 		if ("nh".equals(tag))
+			return true;
+		return false;
+	}
+
+	/**
+	 * 是否为标点符号
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public static boolean isPun(String tag) {
+		if ("wp".equals(tag))
+			return true;
+		return false;
+	}
+
+	/**
+	 * 是否为人名
+	 *
+	 * @return
+	 */
+	public boolean isForeignWords(String tag) {
+		if ("ws".equals(tag))
 			return true;
 		return false;
 	}

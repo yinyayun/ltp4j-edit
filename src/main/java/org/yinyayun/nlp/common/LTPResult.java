@@ -8,8 +8,8 @@ public class LTPResult {
 	private List<Integer> heads;
 	private List<String> deprels;
 
-	public void addTerm(String word, String tag, String ner, String lemma) {
-		terms.add(new LTPTerm(word, tag, ner, lemma));
+	public void addTerm(String word, String tag, String lemma) {
+		terms.add(new LTPTerm(word, tag, lemma));
 	}
 
 	public void setHeads(List<Integer> heads) {

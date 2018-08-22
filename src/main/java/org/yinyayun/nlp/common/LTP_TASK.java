@@ -3,12 +3,17 @@ package org.yinyayun.nlp.common;
 import org.yinyayun.nlp.LTPBaseModel;
 import org.yinyayun.nlp.LTPSegmentor;
 import org.yinyayun.nlp.LTPPostagger;
-import org.yinyayun.nlp.LTPNER;
 import org.yinyayun.nlp.LTPParser;
+import org.yinyayun.nlp.user.Lemmatzation;
+import org.yinyayun.nlp.user.*;
 
 public enum LTP_TASK {
-	TOKEN(1, "TOKEN", LTPSegmentor.class), POS(2, "POS", LTPPostagger.class), NER(3, "NER", LTPNER.class), PARSER(4,
-			"PARSER", LTPParser.class);
+	TOKEN(1, "TOKEN", LTPSegmentor.class), //
+	USER_TOKEN(2, "USER_TOKEN", ExtendSegmentor.class), //
+	LEMMA(3, "LEMMA", Lemmatzation.class), //
+	POS(4, "POS", LTPPostagger.class), //
+	USER_POS(5, "USER_POS", ExtendPostagger.class), //
+	PARSER(6, "PARSER", LTPParser.class);
 
 	public int value;
 	public String name;

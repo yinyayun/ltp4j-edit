@@ -23,7 +23,7 @@ public class LTPSegmentor extends LTPBaseModel {
 
 	public void doAction(LTPContext context) {
 		List<String> tokens = new ArrayList<String>();
-		segmentor.segment(context.getText(), tokens);
+		segmentor.segment(context.getText().toLowerCase(), tokens);
 		context.setWords(tokens);
 	}
 

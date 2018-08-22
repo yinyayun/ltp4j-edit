@@ -52,13 +52,12 @@
 						<configuration>
 							<excludes>
 								<exclude>model/parser.zip</exclude>
-								<exclude>edu/hit/ir/ltp4j/Parser.class</exclude>
-								<exclude>org/yinyayun/nlp/LTPParser.class</exclude>
 							</excludes>
 							<archive>
 								<manifest>
 									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 									<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+									<mainClass>org.yinyayun.ConsoleDemo</mainClass>
 								</manifest>
 							</archive>
 						</configuration>
@@ -73,10 +72,6 @@
 							<classifier>parser</classifier>
 							<includes>
 								<include>model/parser.zip</include>
-								<include>edu/hit/ir/ltp4j/Parser.class</include>
-								<include>org/yinyayun/nlp/LTPParser.class</include>
-								<include>linux-x86_64/**</include>
-								<include>windows-x86_64/**</include>
 							</includes>
 							<archive>
 								<manifest>

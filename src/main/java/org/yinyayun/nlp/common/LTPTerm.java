@@ -9,14 +9,12 @@ package org.yinyayun.nlp.common;
 public class LTPTerm {
 	public String word;
 	public String tag;
-	public String ner;
 	public String lemma;
 
-	public LTPTerm(String word, String tag, String ner, String lemma) {
+	public LTPTerm(String word, String tag, String lemma) {
 		super();
 		this.word = word;
 		this.tag = tag;
-		this.ner = ner;
 		this.lemma = lemma;
 	}
 
@@ -26,11 +24,6 @@ public class LTPTerm {
 		builder.append(word).append("/");
 		if (tag != null)
 			builder.append(tag);
-		else
-			builder.append("NA");
-		builder.append("/");
-		if (ner != null)
-			builder.append(ner);
 		else
 			builder.append("NA");
 		builder.append("/");
